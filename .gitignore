@@ -1,0 +1,6 @@
+usuario/__pycache__/
+usuario/migrations/
+retino_med/__pycache__/
+retino_med/__init__.py
+media/*
+usuario/__init__.py

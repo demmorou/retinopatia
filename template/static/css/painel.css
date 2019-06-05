@@ -1,0 +1,217 @@
+
+body{
+    overflow-x: hidden;
+}
+.colunaMenu{
+    background-color: #222;
+}
+
+.logo{
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.perfil{
+    width: 95%;
+    background-color: #333;
+    margin-left: 5px;
+    margin-top: -10px;
+    padding: 5px;
+    padding-top: 10px;
+    height: 50px;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    color: #fff;
+    border: 0px;
+}
+
+.perfil img{
+    width: 30px;
+    height: 30px;
+}
+
+.perfil .nome{
+    margin-top: 2px;
+}
+
+.menuLinks{
+    padding: 5px;
+    margin-right: 5px;
+    max-width: 99%;
+}
+
+.itemMenu{
+    background-color: #333;
+    color: #fff;
+    transition-duration: 0.2s;
+}
+
+.itemMenu:hover{
+    background-color: #444;
+    transition-duration: 0.2s;
+    color: #fff
+}
+
+.barraSuperior{
+    background-color: #222;
+    border-left: 0px;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+.barraSuperior button{
+    padding-top: 8px;
+    max-width: 40px;
+}
+
+.logo-mobile{
+    color: #fff;
+    margin-top: 13px;
+    margin-bottom: 11px;
+    margin-right: 10px;
+}
+
+.colunaConteudo{
+    background-color: #eee;
+}
+
+.conteudo{
+    margin-top: 80px;
+}
+
+.blocoBranco{
+    background: #fff;
+    padding: 20px 15px;
+    font-family: Poppins;
+    word-wrap: break-word;
+    margin-bottom: 20px;
+}
+
+.blocoBranco .titulo{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.modal .blocoBranco{
+    height:100%;
+    margin: 0 auto;
+}
+
+.modal-motorista{
+    min-width: 90% !important;
+}
+
+.modal-motorista .modal-content{
+    height: 90vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.conteudoBloco{
+    font-size: 14px;
+    font-weight: 400;
+}
+
+/*Painel de controle do motorista*/
+
+.zoom{
+    transform: scale(1);
+    transition: 0.2s;
+}
+
+.zoom:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    transition: 0.2s;
+}
+.conteudoModalMotorista{
+    margin-top: -17px;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.detalhesOcupante {
+    background-color: #222 !important;
+}
+.detalhesOcupante .card-header{
+    background: #222;
+    
+}
+.detalhesOcupante .card-body{
+    background: #fff;
+    border-radius: 0px 0px 3px 3px;
+    border-color: 1px #222;
+    padding-top: 10px;
+}
+
+.detalhesOcupante button{
+    border: 0px;
+    background: transparent;
+    color: #fff;
+    font-size: 14px;
+}
+
+.colunaLista{
+    background-image: linear-gradient(rgba(223,223,223,.7), rgba(223,223,223,.4));
+    height: auto;
+    max-height: 78vh;
+    width: 100%;
+    overflow-y: scroll !important;
+    overflow-x: hidden;
+}
+
+.colunaLista .hovereffect{
+    min-width: 100% !important;
+    height: 10rem;
+    border-radius: 0px;
+    background: #222;
+    margin-top: 20px;
+}
+
+.colunaLista .hovereffect .overlay{
+    border-radius: 0px;
+}
+
+#accordion{
+    width: 100%;
+}
+
+
+.rate {
+    height: 30px;
+    margin: 0 auto;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #007bFF;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #222;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #333;
+}
