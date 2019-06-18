@@ -198,7 +198,8 @@ input:-webkit-autofill:focus {
     box-shadow: 2px 5px 20px -5px rgba(0, 0, 0, 0.1);
 }
 
-.buttonresult0{display: inline-block;
+.buttonresult0{
+    display: inline-block;
     padding: 8px 30px;
     border-radius: 4px;
     color: #ffffff;
@@ -210,7 +211,8 @@ input:-webkit-autofill:focus {
     box-shadow: 2px 5px 20px -5px rgba(0, 0, 0, 0.1);
 }
 
-.buttonresult2{display: inline-block;
+.buttonresult2{
+    display: inline-block;
     padding: 8px 30px;
     border-radius: 4px;
     color: #ffffff;
@@ -1192,14 +1194,22 @@ transition-delay:.2s;
 }
 
 .circle {
-    background-size: 105%;
+    background-size: 100%;
     background-position-x: 50%;
     background-position-y: 50%;
     margin: 0 auto;
-    height: 520px;
-    width: 520px;
+    height: 550px;
+    width: 550px;
     border-radius: 50%;
     border: solid 2px #4885ed;
+  }
+
+  .circle-image {
+    margin: 0 auto;
+    height: 550px;
+    width: 550px;
+    border-radius: 50%;
+    border: none;
   }
 
 /* .circle2 {

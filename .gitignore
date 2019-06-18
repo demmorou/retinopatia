@@ -4,3 +4,5 @@ retino_med/__pycache__/
 retino_med/__init__.py
 media/*
 usuario/__init__.py
+diagnostico/__pycache__/
+# diagnostico/

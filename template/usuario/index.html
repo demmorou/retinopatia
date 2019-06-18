@@ -29,81 +29,47 @@
 
     <!--Header-area-->
     <header class="header-area overlay full-height">
-
+        <form method="POST" enctype="multipart/form-data" action="{% url 'analisar' %}">
             <div class="container-fluid">
                     <div class="row">
                       <div class="col-sm-6">
-                          <form method="POST" enctype="multipart/form-data" action="{% url 'home' %}">
                             {% csrf_token %}
                         <br>
                         <div class="custom-file" id="customFile" lang="es">
-                                <input type="file" name="imagem_retina" id="selectedFile" />
-                                <input type="submit" class="buttonanalisar button" value="CARREGAR IMAGEM"/>
+                                <input type="file" name="imagem_retina" id="selectedFile" style="display: none;" onchange="readURL(this);"/>
+                                <input type="button" class="buttonanalisar button" value="CARREGAR IMAGEM" onclick="document.getElementById('selectedFile').click();" />
                         </div>
                         <br>
-                            <label>NOME DA IMAGEM (TAMANHO):</label>
-                            <p class="class-p">{{ image_name }} (5,1MB)</p>
+                            <label>NOME DA IMAGEM:</label>
+                            <p class="class-p" id="image_name">{{ image_name }}</p>
                         <hr>
                             <label>DIAGNÓSTICO</label>
                             <br>
                             {% if resultado == 1 %}
                                 <div class="buttonresult1">{{ diagnostico }}</div>
                             {% elif resultado == 0 %}
-                                <div class="buttonresult">{{ diagnostico }}</div>
+                                <div class="buttonresult0">{{ diagnostico }}</div>
                             {% else %}
-                                <div class="buttonresult">{{ diagnostico }}</div>
+                                <div class="buttonresult2">{{ diagnostico }}</div>
                             {% endif %}
-                        </form>
                       </div>
                       <div class="col-sm-6 text-center">
-                        <!-- <br>
-                        {% if imagem == 1 %}
-                        <div class="circle">
-                            <img src="{% static 'images/retina.png' %}" class="img-thumbnail" alt="Cinque Terre">
-                        </div>
-                        {% else %}
-                        <div class="circle"></div>
-                        {% endif %} -->
                         <br>
-                        <div id="target" class="circle" style="background-image: url('{{ url_imagem }}');">
-                            <!-- <div class="texto-div">CARREGUE UMA IMAGEM PARA <br>SER ANALISADA</div> -->
-                        </div>
-                        
-                        <button title="Clique para analisar a imagem" class="buttonanalisar">ANALISAR IMAGEM</button>
+                        {% if resultado == 1 %}
+                            <div id="target" class="circle" style="background-image: url('../{{ url_imagem }}');"></div>
+                        {% elif resultado == 0 %}
+                            <div id="target" class="circle" style="background-image: url('{{ url_imagem }}');"></div>
+                        {% else %}
+                            <div id="target" class="circle">
+                                <img id="blah" class="circle-image"/>
+                                <!-- <div class="texto-div">CARREGUE UMA IMAGEM PARA <br>SER ANALISADA</div> -->
+                            </div>
+                        {% endif %}
+                        <button type="submit" title="Clique para analisar a imagem" class="buttonanalisar">ANALISAR IMAGEM</button>
                       </div>
                     </div>
             </div>
-
-            <!-- <div class="row">
-                <div class="col-sm-6">
-                                <div class="row v-center">
-                                    <div class="col-xs-6 col-md-4 header-text">
-                                        <button class="button">CARREGAR IMAGEM</button>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="row v-center">
-                                    <div class="col-xs-6 col-md-4 header-text">
-                                        <label>NOME DA IMAGEM (TAMANHO)</label>
-                                        <p>imagem_002.jpg (5,1MB)</p>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="row v-center">
-                                    <div class="col-xs-6 col-md-4 header-text">
-                                        <label>DIAGNÓSTICO</label>
-                                    </div>
-                                </div>
-                                <div class="row v-center">
-                                    <div class="col-xs-6 col-md-4 header-text">
-                                        <a class="buttonresult" aria-expanded="false" aria-controls="collapseExample">NÃO HÁ EXSUDATOS</a>
-                                    </div>
-                                </div>
-            </div>
-        
-
-        </div> -->
+        </form>
     </header>
-    <!--Header-area/-->
 
     {% endblock %}
